@@ -58,7 +58,8 @@ public class UserController {
     public ResponseEntity<?> getCurrentUser(@AuthenticationPrincipal UserPrincipal user) {
         Map<String, Object> response = new HashMap<>();
         response.put("id", user.getId());
-        response.put("username", user.getUsername());
+        response.put("email", user.getUsername());
+        response.put("username", user.getDisplayUsername());
         return ResponseEntity.ok(response);
     }
 
