@@ -29,15 +29,15 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public String getUsername() {
-        return user.getUsername();
+        return user.getEmail();
     }
 
     public Long getId() {
         return user.getId();
     }
 
-    public String getEmail() {
-        return user.getEmail();
+    public String getDisplayUsername() {
+        return user.getUsername();
     }
     
 }
