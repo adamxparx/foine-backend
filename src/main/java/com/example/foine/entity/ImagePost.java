@@ -41,7 +41,7 @@ public class ImagePost {
 
     @OneToMany(mappedBy = "imagePost", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<Comments> comments;
+    private List<Comment> comments;
     
     @OneToMany(mappedBy = "imagePost", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
@@ -92,10 +92,10 @@ public class ImagePost {
         this.user = user;
     }
 
-    public void setComments(List<Comments> comments) {
+    public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
-    public List<Comments> getComments() { return comments; }
+    public List<Comment> getComments() { return comments; }
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
