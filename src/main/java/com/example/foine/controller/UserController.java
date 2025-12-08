@@ -1,6 +1,7 @@
 package com.example.foine.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.foine.dto.ArtistsDTO;
 import com.example.foine.dto.LoginDTO;
 import com.example.foine.dto.UserDTO;
 import com.example.foine.security.JwtUtil;
@@ -61,6 +63,12 @@ public class UserController {
         response.put("email", user.getUsername());
         response.put("username", user.getDisplayUsername());
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/artists")
+    public ResponseEntity<List<ArtistsDTO>> getAllArtists() {
+        List<ArtistsDTO> artists = userService.getAllArtists();
+        return ResponseEntity.ok(artists);
     }
 
     @PostMapping("/logout")
