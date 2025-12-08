@@ -43,6 +43,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .requestMatchers("/api/login").permitAll()
                 .requestMatchers("/api/register").permitAll()
+                .requestMatchers("/api/artists").permitAll()
                 .requestMatchers("/api/image-posts/**").permitAll()
                 .anyRequest().authenticated()
             )

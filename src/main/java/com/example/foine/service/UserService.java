@@ -1,8 +1,12 @@
 package com.example.foine.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.example.foine.dto.ArtistsDTO;
 import com.example.foine.dto.LoginDTO;
 import com.example.foine.dto.UserDTO;
 import com.example.foine.entity.User;
@@ -38,6 +42,13 @@ public class UserService {
         }
 
         return passwordEncoder.matches(loginDTO.getPassword(), user.getPassword());
+    }
+
+    public List<ArtistsDTO> getAllArtists() {
+        return userRepository.findAll()
+            .stream()
+            .map(user -> new ArtistsDTO(user.getEmail(), user.getUsername()))
+            .collect(Collectors.toList());
     }
 
 }
