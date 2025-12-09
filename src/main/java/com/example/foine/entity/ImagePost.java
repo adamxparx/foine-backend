@@ -45,7 +45,7 @@ public class ImagePost {
     
     @OneToMany(mappedBy = "imagePost", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<Likes> likes;
+    private List<Like> likes;
     
     @OneToMany(mappedBy = "imagePost", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference

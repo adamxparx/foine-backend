@@ -21,8 +21,8 @@ public class ImagePostDTO {
 
     public String getCaption() { return caption; }
     public void setCaption(String caption) { this.caption = caption; }
-    public Long getUserId() { return id; }
-    public void setUserId(Long id) { this.id = id; }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
     public String getImageUrl() { return imageUrl; }
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
     public String getUsername() { return username; }
